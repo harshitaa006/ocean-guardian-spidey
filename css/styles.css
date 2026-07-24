@@ -1,0 +1,125 @@
+/* Ocean Guardian — shared custom styles layered on top of Tailwind CDN */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0a1024;
+  color: #e6f6fb;
+  /* subtle layered ocean gradient */
+  background-image:
+    radial-gradient(1200px 600px at 80% -10%, rgba(34, 211, 238, 0.14), transparent 60%),
+    radial-gradient(900px 500px at 0% 10%, rgba(45, 212, 191, 0.1), transparent 55%),
+    linear-gradient(180deg, #0a1024 0%, #070c1c 60%, #03060f 100%);
+  background-attachment: fixed;
+}
+
+/* Glassmorphism card */
+.glass {
+  background: rgba(17, 26, 53, 0.55);
+  border: 1px solid rgba(103, 232, 249, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.glass-strong {
+  background: rgba(23, 34, 74, 0.78);
+  border: 1px solid rgba(103, 232, 249, 0.2);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+/* Gradient text accent */
+.text-gradient {
+  background: linear-gradient(100deg, #67e8f9, #2dd4bf 60%, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Card hover lift */
+.lift {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.lift:hover {
+  transform: translateY(-6px);
+  border-color: rgba(34, 211, 238, 0.45);
+  box-shadow: 0 20px 50px -20px rgba(34, 211, 238, 0.4);
+}
+
+/* Animated caustic light bar for the hero */
+.caustic {
+  background: linear-gradient(90deg, transparent, rgba(103, 232, 249, 0.5), transparent);
+  background-size: 200% 100%;
+}
+
+/* Progress bar fill transition */
+.bar-fill {
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Nav link underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background: #22d3ee;
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  width: 100%;
+}
+.nav-link[aria-current="page"] {
+  color: #67e8f9;
+}
+
+/* Locked overlay */
+.locked {
+  filter: grayscale(0.7) brightness(0.55);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #070c1c;
+}
+::-webkit-scrollbar-thumb {
+  background: #17224a;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #22405f;
+}
+
+/* Fade-in for detail modal */
+.modal-backdrop {
+  transition: opacity 0.25s ease;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

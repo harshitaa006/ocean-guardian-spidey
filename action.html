@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-abyss">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Take Action — Ocean Guardian</title>
+    <meta
+      name="description"
+      content="Conservation is working. Read real ocean success stories, discover simple ways to help, and take the Ocean Guardian pledge."
+    />
+    <meta name="theme-color" content="#020814" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="min-h-screen bg-abyss text-foam font-sans antialiased">
+    <div id="site-nav" data-active="action"></div>
+
+    <main>
+      <!-- Hero -->
+      <section class="relative overflow-hidden">
+        <div class="absolute inset-0">
+          <img src="/images/story-cleanup.png" alt="" aria-hidden="true" class="h-full w-full object-cover opacity-20" />
+          <div class="absolute inset-0 bg-gradient-to-b from-abyss/70 via-abyss/85 to-abyss"></div>
+        </div>
+        <div class="relative mx-auto max-w-4xl px-4 sm:px-6 py-20 text-center">
+          <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-teal mb-4">
+            <span id="action-icon"></span> Conservation &amp; Take Action
+          </p>
+          <h1 class="font-display text-4xl sm:text-6xl font-extrabold tracking-tight text-balance">
+            The ocean can recover — <span class="text-cyan">with us</span>
+          </h1>
+          <p class="mx-auto mt-5 max-w-2xl text-lg text-mute leading-relaxed text-pretty">
+            Every problem you learned about has people working on the solution. Here is proof that
+            protection works, and simple things you can do to join the effort.
+          </p>
+        </div>
+      </section>
+
+      <!-- Success stories -->
+      <section class="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold mb-2">Stories of hope</h2>
+        <p class="text-mute mb-8 max-w-2xl">Real conservation wins from around the world.</p>
+        <div id="stories" class="grid gap-6 md:grid-cols-3"></div>
+      </section>
+
+      <!-- Ways to help -->
+      <section class="mx-auto max-w-7xl px-4 sm:px-6 py-12">
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold mb-2">Six ways to help today</h2>
+        <p class="text-mute mb-8 max-w-2xl">Small everyday choices add up to a healthier ocean.</p>
+        <div id="actions" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </section>
+
+      <!-- Pledge -->
+      <section class="mx-auto max-w-3xl px-4 sm:px-6 py-12">
+        <div class="glass-strong rounded-3xl border border-cyan/20 p-8 sm:p-10 text-center">
+          <span class="inline-flex text-cyan mb-4" id="pledge-icon"></span>
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-balance">Take the Ocean Guardian pledge</h2>
+          <p class="mt-3 text-mute leading-relaxed text-pretty">
+            Add your name to a growing wave of people committing to protect the sea. It is symbolic,
+            but every guardian counts.
+          </p>
+
+          <form id="pledge-form" class="mt-6 flex flex-col sm:flex-row items-stretch gap-3 max-w-md mx-auto">
+            <label for="pledge-name" class="sr-only">Your first name</label>
+            <input
+              id="pledge-name"
+              name="pledge-name"
+              type="text"
+              required
+              maxlength="24"
+              placeholder="Your first name"
+              class="flex-1 rounded-full bg-abyss/60 border border-cyan/20 px-5 py-3 text-foam placeholder:text-mute focus:outline-none focus:ring-2 focus:ring-cyan/50"
+            />
+            <button
+              type="submit"
+              class="rounded-full bg-cyan px-6 py-3 font-semibold text-abyss hover:bg-cyan-soft transition-colors whitespace-nowrap"
+            >
+              I pledge
+            </button>
+          </form>
+
+          <div id="pledge-result" class="hidden mt-6"></div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/action.js"></script>
+  </body>
+</html>

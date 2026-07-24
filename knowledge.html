@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-deep">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knowledge Hub — Ocean Guardian</title>
+    <meta
+      name="description"
+      content="Explore ocean pollution, marine life, coral reefs and endangered species. Read the essentials, then take a quiz to earn Knowledge Points."
+    />
+    <meta name="theme-color" content="#0a1024" />
+    <link rel="icon" href="/icon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="font-sans antialiased text-foam min-h-screen">
+    <div id="site-nav" data-active="learn"></div>
+
+    <main class="mx-auto max-w-7xl px-4 sm:px-6">
+      <!-- header -->
+      <section class="pt-16 pb-10 max-w-3xl animate-rise">
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-cyan/30 bg-cyan/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan-soft"
+          id="hub-badge"
+        ></span>
+        <h1 class="mt-6 font-display text-4xl sm:text-5xl font-bold text-balance">
+          The Knowledge Hub
+        </h1>
+        <p class="mt-4 text-lg text-mute leading-relaxed text-pretty">
+          Four essential topics that shape the health of our oceans. Read the highlights, then put
+          your understanding to the test to earn Knowledge Points and unlock the deep.
+        </p>
+      </section>
+
+      <!-- topic cards -->
+      <section class="pb-16">
+        <div id="topic-grid" class="grid gap-6 md:grid-cols-2"></div>
+      </section>
+    </main>
+
+    <!-- Learn More modal -->
+    <div
+      id="topic-modal"
+      class="fixed inset-0 z-[60] hidden items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-backdrop absolute inset-0 bg-abyss/80 backdrop-blur-sm" data-close></div>
+      <div
+        class="glass-strong relative w-full max-w-lg rounded-3xl p-1 shadow-glow animate-rise max-h-[90vh] overflow-hidden flex flex-col"
+      >
+        <img id="modal-img" src="" alt="" class="h-44 w-full rounded-t-[22px] object-cover" />
+        <button
+          data-close
+          class="absolute right-4 top-4 rounded-full bg-abyss/70 p-2 text-foam hover:bg-abyss transition"
+          aria-label="Close"
+          id="modal-close-btn"
+        ></button>
+        <div class="p-6 overflow-y-auto">
+          <h3 id="modal-title" class="font-display text-2xl font-bold"></h3>
+          <p id="modal-desc" class="mt-2 text-mute leading-relaxed"></p>
+          <h4 class="mt-6 text-xs font-semibold uppercase tracking-widest text-cyan-soft">
+            Key facts
+          </h4>
+          <ul id="modal-facts" class="mt-3 space-y-3"></ul>
+          <a
+            id="modal-quiz-link"
+            href="#"
+            class="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-deep hover:bg-cyan-soft transition"
+            >Take the Quiz</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/knowledge.js"></script>
+  </body>
+</html>

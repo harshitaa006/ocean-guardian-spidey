@@ -1,13 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<html lang="en" class="bg-deep">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ocean Guardian</title>
+    <meta
+      name="description"
+      content="Ocean Guardian is an interactive platform to learn about ocean conservation, test your knowledge, and explore the deep sea one zone at a time."
+    />
+    <meta name="theme-color" content="#0a1024" />
+    <link rel="icon" type="image/png" href="./assets/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./dist/output.css">
-</head>
-<script src="./script.js"></script>
-<body>
-    
-</body>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <script src="/js/tailwind-config.js"></script> -->
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="font-sans antialiased text-foam min-h-screen">
+    <div id="site-nav" data-active="home"></div>
+
+    <main>
+      <!-- ===================== HERO ===================== -->
+      <section class="relative overflow-hidden">
+        <div class="absolute inset-0 -z-10">
+          <img
+            src="/images/hero-ocean.png"
+            alt="Sunlight streaming through deep blue ocean water with a sea turtle and fish"
+            class="h-full w-full object-cover opacity-45"
+          />
+          <div class="absolute inset-0 bg-gradient-to-b from-deep/70 via-deep/80 to-deep"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-deep/80 to-transparent"></div>
+        </div>
+
+        <div class="mx-auto max-w-7xl px-4 sm:px-6">
+          <div class="min-h-[88vh] flex flex-col justify-center py-24 max-w-2xl animate-rise">
+            <span
+              class="inline-flex w-fit items-center gap-2 rounded-full border border-cyan/30 bg-cyan/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan-soft"
+            >
+              <span id="hero-badge-icon"></span> Explore · Learn · Protect
+            </span>
+            <h1
+              class="mt-6 font-display text-4xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] text-balance"
+            >
+              Dive into the world
+              <span class="text-gradient">beneath the waves.</span>
+            </h1>
+            <p class="mt-6 text-lg text-mute leading-relaxed text-pretty max-w-xl">
+              Our oceans cover most of the planet yet remain the least explored place on Earth.
+              Learn how they work, test what you know, and unlock the deep sea zone by zone as your
+              knowledge grows.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4">
+              <a
+                href="/knowledge.html"
+                class="group inline-flex items-center justify-center gap-2 rounded-full bg-cyan px-7 py-3.5 text-sm font-semibold text-deep shadow-glow hover:bg-cyan-soft transition-colors"
+              >
+                Start Learning
+                <span
+                  class="transition-transform group-hover:translate-x-1"
+                  id="hero-cta-arrow"
+                ></span>
+              </a>
+              <a
+                href="/explorer.html"
+                class="inline-flex items-center justify-center gap-2 rounded-full border border-cyan/30 bg-surface/40 px-7 py-3.5 text-sm font-semibold text-foam hover:border-cyan/60 hover:bg-surface transition-colors"
+              >
+                Explore the Ocean
+              </a>
+            </div>
+
+            <!-- live progress snapshot -->
+            <div
+              id="hero-progress"
+              class="mt-12 grid grid-cols-3 gap-4 max-w-lg"
+              aria-label="Your progress so far"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== JOURNEY ===================== -->
+      <section class="mx-auto max-w-7xl px-4 sm:px-6 py-20">
+        <div class="text-center max-w-2xl mx-auto">
+          <h2 class="font-display text-3xl sm:text-4xl font-bold text-balance">
+            Your journey to the deep
+          </h2>
+          <p class="mt-4 text-mute leading-relaxed text-pretty">
+            Ocean Guardian turns learning into an adventure. Every step you take brings the hidden
+            depths a little closer.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-6 md:grid-cols-4">
+          <!-- steps injected by home.js -->
+          <div id="journey-steps" class="contents"></div>
+        </div>
+      </section>
+
+      <!-- ===================== TOPIC PREVIEW ===================== -->
+      <section class="mx-auto max-w-7xl px-4 sm:px-6 pb-8">
+        <div class="glass rounded-3xl p-8 sm:p-12 overflow-hidden relative">
+          <div class="relative z-10 grid gap-10 lg:grid-cols-2 items-center">
+            <div>
+              <h2 class="font-display text-3xl sm:text-4xl font-bold text-balance">
+                Knowledge is the first current of change
+              </h2>
+              <p class="mt-4 text-mute leading-relaxed text-pretty">
+                Start in the Knowledge Hub to explore ocean pollution, marine life, coral reefs and
+                endangered species. Each topic has a short read and a quiz to earn Knowledge Points.
+              </p>
+              <a
+                href="/knowledge.html"
+                class="mt-8 inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3 text-sm font-semibold text-deep hover:brightness-110 transition"
+              >
+                Visit the Knowledge Hub
+              </a>
+            </div>
+            <div id="home-topics" class="grid grid-cols-2 gap-4"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/home.js"></script>
+  </body>
 </html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-deep">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Zone — Ocean Guardian</title>
+    <meta
+      name="description"
+      content="Test your ocean knowledge across four topics. Earn Knowledge Points with every correct answer and unlock deeper ocean zones."
+    />
+    <meta name="theme-color" content="#0a1024" />
+    <link rel="icon" href="/icon.svg" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="font-sans antialiased text-foam min-h-screen">
+    <div id="site-nav" data-active="quiz"></div>
+
+    <main class="mx-auto max-w-3xl px-4 sm:px-6 pb-16">
+      <!-- header -->
+      <section class="pt-16 pb-8 text-center animate-rise">
+        <span
+          class="inline-flex items-center gap-2 rounded-full border border-cyan/30 bg-cyan/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-cyan-soft"
+          id="quiz-badge"
+        ></span>
+        <h1 class="mt-6 font-display text-4xl sm:text-5xl font-bold text-balance">Quiz Zone</h1>
+        <p class="mt-4 text-mute leading-relaxed text-pretty max-w-xl mx-auto">
+          Every correct answer earns 10 Knowledge Points. Beat your best score on each topic to
+          climb toward the next ocean zone.
+        </p>
+      </section>
+
+      <!-- STEP 1: topic selection -->
+      <section id="quiz-select">
+        <h2 class="sr-only">Choose a topic</h2>
+        <div id="topic-select-grid" class="grid gap-4 sm:grid-cols-2"></div>
+      </section>
+
+      <!-- STEP 2: active quiz -->
+      <section id="quiz-active" class="hidden">
+        <div class="glass rounded-3xl p-6 sm:p-8">
+          <!-- progress bar -->
+          <div class="flex items-center justify-between text-sm">
+            <span id="quiz-topic-label" class="font-semibold text-cyan-soft"></span>
+            <span id="quiz-counter" class="text-mute"></span>
+          </div>
+          <div class="mt-3 h-2 w-full overflow-hidden rounded-full bg-surface2">
+            <div id="quiz-bar" class="bar-fill h-full rounded-full bg-cyan" style="width: 0%"></div>
+          </div>
+
+          <!-- question -->
+          <h2 id="quiz-question" class="mt-8 font-display text-xl sm:text-2xl font-semibold text-balance"></h2>
+          <div id="quiz-options" class="mt-6 grid gap-3"></div>
+
+          <!-- feedback + next -->
+          <div class="mt-6 flex items-center justify-between gap-4">
+            <p id="quiz-feedback" class="text-sm font-medium" aria-live="polite"></p>
+            <button
+              id="quiz-next"
+              class="hidden inline-flex items-center gap-2 rounded-full bg-cyan px-6 py-2.5 text-sm font-semibold text-deep hover:bg-cyan-soft transition"
+            ></button>
+          </div>
+        </div>
+        <button id="quiz-quit" class="mt-4 text-sm text-mute hover:text-foam transition">
+          &larr; Choose a different topic
+        </button>
+      </section>
+
+      <!-- STEP 3: results -->
+      <section id="quiz-result" class="hidden">
+        <div class="glass-strong rounded-3xl p-8 text-center shadow-glow">
+          <span id="result-icon" class="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-cyan/10 text-cyan"></span>
+          <h2 id="result-title" class="mt-6 font-display text-3xl font-bold"></h2>
+          <p id="result-sub" class="mt-2 text-mute"></p>
+
+          <div class="mt-8 grid grid-cols-3 gap-4">
+            <div class="rounded-2xl bg-surface/60 p-4">
+              <div id="result-score" class="font-display text-3xl font-bold text-foam"></div>
+              <div class="mt-1 text-[11px] uppercase tracking-wide text-mute">Correct</div>
+            </div>
+            <div class="rounded-2xl bg-surface/60 p-4">
+              <div id="result-earned" class="font-display text-3xl font-bold text-teal"></div>
+              <div class="mt-1 text-[11px] uppercase tracking-wide text-mute">Points Earned</div>
+            </div>
+            <div class="rounded-2xl bg-surface/60 p-4">
+              <div id="result-total" class="font-display text-3xl font-bold text-cyan-soft"></div>
+              <div class="mt-1 text-[11px] uppercase tracking-wide text-mute">Total KP</div>
+            </div>
+          </div>
+
+          <div id="result-unlock" class="mt-6 hidden rounded-2xl border border-teal/30 bg-teal/10 p-4 text-sm text-teal"></div>
+
+          <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+            <button id="result-retry" class="rounded-full border border-cyan/30 bg-surface/50 px-6 py-3 text-sm font-semibold text-foam hover:border-cyan/60 transition">
+              Try Again
+            </button>
+            <button id="result-more" class="rounded-full border border-cyan/30 bg-surface/50 px-6 py-3 text-sm font-semibold text-foam hover:border-cyan/60 transition">
+              Another Topic
+            </button>
+            <a id="result-explore" href="/explorer.html" class="rounded-full bg-cyan px-6 py-3 text-sm font-semibold text-deep hover:bg-cyan-soft transition">
+              Explore the Ocean
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/quiz.js"></script>
+  </body>
+</html>

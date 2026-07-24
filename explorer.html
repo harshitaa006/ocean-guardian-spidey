@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-abyss">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ocean Explorer — Ocean Guardian</title>
+    <meta
+      name="description"
+      content="Dive from the sunlit surface to the crushing abyss. Unlock ocean zones by earning knowledge points and meet the creatures that live at every depth."
+    />
+    <meta name="theme-color" content="#020814" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body class="min-h-screen bg-abyss text-foam font-sans antialiased">
+    <div id="site-nav" data-active="explore"></div>
+
+    <main>
+      <!-- Intro -->
+      <section class="mx-auto max-w-7xl px-4 sm:px-6 pt-10 pb-6">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="max-w-2xl">
+            <p class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-cyan-soft mb-3">
+              <span class="text-cyan" id="explore-icon"></span> Ocean Explorer
+            </p>
+            <h1 class="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-balance">
+              Descend into the deep
+            </h1>
+            <p class="mt-4 text-mute leading-relaxed text-pretty">
+              Scroll down to travel from the sunlit surface toward the crushing abyss. Deeper
+              zones stay locked until you earn enough <span class="text-cyan-soft font-semibold">Knowledge Points</span>
+              in the Quiz Zone. The further you dive, the stranger life becomes.
+            </p>
+          </div>
+          <div class="shrink-0 glass rounded-2xl px-5 py-4 border border-cyan/15">
+            <p class="text-xs uppercase tracking-widest text-mute">Your dive credits</p>
+            <p class="mt-1 flex items-baseline gap-2">
+              <span id="explore-points" class="font-display text-3xl font-extrabold text-cyan">0</span>
+              <span class="text-sm text-mute">KP</span>
+            </p>
+            <p id="explore-next" class="mt-1 text-xs text-mute"></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Zones -->
+      <section id="zones" class="mx-auto max-w-7xl px-4 sm:px-6 pb-16 space-y-8"></section>
+    </main>
+
+    <!-- Creature detail modal -->
+    <div
+      id="creature-modal"
+      class="fixed inset-0 z-[60] hidden items-center justify-center p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="creature-modal-title"
+    >
+      <div id="creature-backdrop" class="absolute inset-0 bg-abyss/80 backdrop-blur-sm"></div>
+      <div class="relative w-full max-w-lg glass-strong rounded-3xl border border-cyan/20 overflow-hidden shadow-2xl">
+        <button
+          id="creature-close"
+          class="absolute top-3 right-3 z-10 rounded-full bg-abyss/60 p-2 text-mute hover:text-foam"
+          aria-label="Close"
+        ></button>
+        <div id="creature-modal-body"></div>
+      </div>
+    </div>
+
+    <div id="site-footer"></div>
+
+    <script src="/js/data.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/explorer.js"></script>
+  </body>
+</html>
