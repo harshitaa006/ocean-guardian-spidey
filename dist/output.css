@@ -8,6 +8,8 @@
       "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-green-600: oklch(62.7% 0.194 149.214);
+    --color-cyan-500: oklch(71.5% 0.143 215.221);
     --color-rose-300: oklch(81% 0.117 11.638);
     --color-rose-400: oklch(71.2% 0.194 13.428);
     --color-rose-500: oklch(64.5% 0.246 16.439);
@@ -880,6 +882,12 @@
   }
   .whitespace-nowrap {
     white-space: nowrap;
+  }
+  .text-cyan-500 {
+    color: var(--color-cyan-500);
+  }
+  .text-green-600 {
+    color: var(--color-green-600);
   }
   .text-rose-300 {
     color: var(--color-rose-300);

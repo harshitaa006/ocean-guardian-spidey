@@ -10,8 +10,9 @@
     />
     <meta name="theme-color" content="#0a1024" />
     <link rel="icon" href="/icon.svg" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="/js/tailwind-config.js"></script>
+    <link rel="stylesheet" href="./dist/output.css">
+
+    
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body class="font-sans antialiased text-foam min-h-screen">
@@ -77,14 +78,14 @@
           <div class="mt-8 grid grid-cols-3 gap-4">
             <div class="rounded-2xl bg-surface/60 p-4">
               <div id="result-score" class="font-display text-3xl font-bold text-foam"></div>
-              <div class="mt-1 text-[11px] uppercase tracking-wide text-mute">Correct</div>
+              <div class="mt-1 text-[11px] uppercase tracking-wide text-mute text-green-600">Correct</div>
             </div>
             <div class="rounded-2xl bg-surface/60 p-4">
               <div id="result-earned" class="font-display text-3xl font-bold text-teal"></div>
               <div class="mt-1 text-[11px] uppercase tracking-wide text-mute">Points Earned</div>
             </div>
             <div class="rounded-2xl bg-surface/60 p-4">
-              <div id="result-total" class="font-display text-3xl font-bold text-cyan-soft"></div>
+              <div id="result-total" class="font-display text-3xl font-bold text-cyan-500"></div>
               <div class="mt-1 text-[11px] uppercase tracking-wide text-mute">Total KP</div>
             </div>
           </div>
