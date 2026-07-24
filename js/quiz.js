@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (chosen === q.answer) {
       correct++;
       feedback.textContent = "Correct! +" + OG.POINTS_PER_CORRECT + " KP";
-      feedback.className = "text-sm font-medium text-teal";
+      feedback.className = "text-sm font-medium text-teal text-green-500";
     } else {
       feedback.textContent = "Not quite — the highlighted answer is correct.";
       feedback.className = "text-sm font-medium text-rose-300";
